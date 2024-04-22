@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Juego mega ultra divertido</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Bootstrap icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+
+<body>
+    <!-- Responsive navbar-->
+    <nav class="navbar navbar-light" style="background-image: linear-gradient(to right, #fff9c0, #78d6ff);">
+        <div class="container px-lg-5">
+            <a class="navbar-brand" href="#!">
+                <img class="logo" src="gato.png" alt="Logo de Start Bootstrap" style="width: 100px; height: auto;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link active" aria-current="page"
+                            href="#instrucciones">INSTRUCCIONES</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#juego">JUEGO</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contacto">CONTACTO</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MUSICA -->
+    <div id="musica">
+        <div title="Pulsa para reproducir" class="audio-controls text-center">
+            <audio id="audio" src="musica.mp3" type="audio"></audio>
+            <button id="btnReproducir" class="btn btn-outline-dark">
+                <span id="iconoReproducir" class="bi bi-play-fill"></span>
+                <i class="bi bi-music-note-beamed"></i> <!-- Icono de música -->
+            </button>
+        </div>
+    </div>
+
+    <!-- Header-->
+    <header class="py-5">
+        <div class="container px-lg-5">
+            <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
+                <div class="m-4 m-lg-5">
+                    <div class="text-bg">
+                        <h1><strong>¡Bienvenido a "Aranjuez: Tesoro Histórico"!</strong></h1>
+                        <span>Demuestra tus conocimientos respondiendo preguntas</span>
+                        <br>
+                        <br>
+                    </div>
+                    <button class="btn btn-primary btn-lg btn-transparent" onclick="startGame()" style="padding: 0;">
+                        <img src="start3.png" alt="Icono de Juego" style="width: 300px;">
+                    </button>
+                    <button class="btn btn-primary btn-lg btn-transparent" onclick="toggleInstructions()" style="padding: 0;">
+                        Saber cómo jugar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenedor oculto de instrucciones -->
+    <div id="instrucciones-container" style="display: none;">
+        <div class="container px-lg-5">
+            <div class="text-center mb-5">
+                <h1 class="mb-0">Cómo jugar</h1>
+            </div>
+            <!-- Page Features-->
+            <div class="row gx-lg-5">
+                <div class="col-lg-6 col-xxl-4 mb-5">
+                    <div class="card bg-light border-0 h-100">
+                        <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
+                            <div class="instruction-item">
+                                <span class="instruction-number">1</span>
+                                <div class="instruction-text">
+                                    <p>Explora <strong>Aranjuez</strong>, una ciudad con mucha historia y cultura.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-xxl-4 mb-5">
+                    <div class="card bg-light border-0 h-100">
+                        <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
+                            <div class="instruction-item">
+                                <span class="instruction-number">2</span>
+                                <div class="instruction-text">
+                                    <p>Descubre sus palacios y jardines hermosos.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-xxl-4 mb-5">
+                    <div class="card bg-light border-0 h-100">
+                        <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
+                            <div class="instruction-item">
+                                <span class="instruction-number">3</span>
+                                <div class="instruction-text">
+                                    <p>Responde preguntas para conocer más sobre <strong>Aranjuez</strong>.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-xxl-4 mb-5">
+                    <div class="card bg-light border-0 h-100">
+                        <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
+                            <div class="instruction-item">
+                                <span class="instruction-number">4</span>
+                                <div class="instruction-text">
+                                    <p>Conviértete en un experto sobre esta ciudad.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Carrousel -->
+    <div class="carousel-container">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></li>
+                <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></li>
+                <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="jardin2.jpg" class="d-block w-100" alt="First slide">
+                </div>
+                <div class="carousel-item">
+                    <img src="img4.jpg" class="d-block w-100" alt="Second slide">
+                </div>
+                <div class="carousel-item">
+                    <img src="jardin.jpg" class="d-block w-100" alt="Third slide">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer-->
+    <footer class="py-5 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; AEG 2024</p>
+        </div>
+    </footer>
+
+    <!-- Botón de scroll -->
+    <button id="scrollToTopBtn" title="Go to top">
+        <img src="flecha.png" alt="Flecha" style="width: 50px;">
+    </button>
+
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+
+    <!-- JavaScript para mostrar/ocultar instrucciones -->
+    <script>
+        function toggleInstructions() {
+            var instructionsContainer = document.getElementById("instrucciones-container");
+            if (instructionsContainer.style.display === "none") {
+                instructionsContainer.style.display = "block";
+            } else {
+                instructionsContainer.style.display = "none";
+            }
+        }
+    </script>
+</body>
+
+</html>
